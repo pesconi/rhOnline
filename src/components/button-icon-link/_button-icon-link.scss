@@ -1,0 +1,16 @@
+.button--icon--link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  &__icon {
+    font-size: 2rem;
+    padding: 10px;
+    color: #007bff;
+  }
+  &__label {
+    border-top: 1px solid rgba(0, 0, 0, 0.102);
+    font-size: 1rem;
+    padding-top: 10px;
+  }
+}
