@@ -1,36 +1,56 @@
 import React from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
 
+
 interface InputProps {
-  name: string;
-  label: string;
-  type: string;
+  field: {
+    name: string;
+    value: any;
+    onBlur: () => void;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    disabled?: boolean;
+  };
   multiline?: boolean;
   customClassName?: string;
+  label: string;
+  type: string;
+  pattern?: string;
+  title?: string;
+  inputMode?: "search" | "text" | "email" | "tel" | "url" | "none" | "numeric" | "decimal" | undefined;
+  maxLength?: number;
+  inputRef?: React.Ref<any>;
 }
 
-const CustomTextInput: React.FC<InputProps> = ({ name, label, type, multiline = false, customClassName }) => {
+const CustomTextInput: React.FC<InputProps> = ({ field, ...props }) => {
   const { control } = useFormContext();
   return (
-    <div className={`custom_text_input ${customClassName}`}>
+    <div className={`custom_text_input ${props.customClassName}`}>
       <Controller
-        name={name}
+        name={field.name}
         control={control}
-        render={({ field }) => (
-          multiline ? (
+        render={({ field: { ref, ...restField } }) => (
+          props.multiline ? (
             <textarea
-              key={name}
-              id={name}
-              placeholder={label}
-              {...field}
+              key={restField.name}
+              id={restField.name}
+              placeholder={props.label}
+              disabled={restField.disabled}
+              {...restField}
+              ref={props.inputRef}
             />
           ) : (
             <input
-              key={name}
-              id={name}
-              type={type}
-              placeholder={label}
-              {...field}
+              key={restField.name}
+              id={restField.name}
+              type={props.type}
+              placeholder={props.label}
+              pattern={props.pattern}
+              title={props.title}
+              inputMode={props.inputMode ?? 'text'}
+              maxLength={props.maxLength}
+              disabled={restField.disabled}
+              ref={props.inputRef}
+              {...restField}
             />
           )
         )}

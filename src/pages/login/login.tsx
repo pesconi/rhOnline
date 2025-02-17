@@ -1,44 +1,54 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FormProvider, useForm } from 'react-hook-form';
+import { Controller, ControllerRenderProps, FormProvider, useForm } from 'react-hook-form';
 import CustomTextInput from '../../components/input/input';
-import { useAuth } from '../../hooks/auth';
+import { useMask } from '@react-input/mask';
+import { ICredentials } from '../../hooks/useAuth';
 
-interface SignInFormData {
-  cpf: string;
-  password: string;
+
+
+interface LoginPros {
+  handleSignIn: (credentials: ICredentials) => Promise<void>
 }
 
-const SignIn: React.FC = () => {
-  const test = useAuth();
+const Login: React.FC<LoginPros> = ({ handleSignIn }) => {
+
+  useEffect(() => {
+    localStorage.getItem('user') ? navigate('/contracheque') : null
+  }, [])
+
   const navigate = useNavigate()
 
-  const handleSignIn = async ({ cpf, password }: SignInFormData) => {
+  const onSubmit = useCallback(async (data: ICredentials) => {
     try {
-      await test.signIn({
-        cpf,
-        password
-      });
-
-    } catch (err) {
-      console.log(err)
-      alert('Ocorreu um erro ao fazer login, cheque as credenciais.')
+      await handleSignIn(data);
+      navigate('/contracheque');
+    } catch (error) {
+      console.error('Failed to sign in:', error);
     }
-  };
+  }, [handleSignIn, navigate]);
 
   const navigateToForgotPass = useCallback(() => {
-    navigate('ForgotPass');
+    navigate('/ForgotPass');
   }, [navigate])
 
 
   const methods = useForm({
     defaultValues: {
-      cpf: '',
+      user: '',
       password: '',
+      cd_cliente: Number(localStorage.getItem('cd_cliente')) || 0,
     },
   });
+
+  const inputRef = useMask({
+    mask: '___.___.___-__', // mask pattern
+    replacement: { _: /\d/ },
+
+  });
+
 
   return (
     <>
@@ -50,17 +60,49 @@ const SignIn: React.FC = () => {
         <div className="title"> Contracheque Fênix </div>
         <div className="subtitle">Faça seu logon </div>
         <FormProvider {...methods} >
-          <form onSubmit={methods.handleSubmit(handleSignIn)} className='header--form'>
-            <CustomTextInput name="cpf" label="CPF" type="text" />
-            <CustomTextInput name="password" label="Senha" type="password" />
+          <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <Controller
+              name="user"
+              control={methods.control}
+              render={({ field }) => (
+                <CustomTextInput
+                  field={field}
+                  label="Usuário"
+                  type="text"
+                  inputRef={inputRef}
+                />
+              )}
+            />
+            <Controller
+              name="password"
+              control={methods.control}
+              render={({ field }) => (
+                <CustomTextInput
+                  field={field}
+                  label="Senha"
+                  type="password"
+                />
+              )}
+            />
+            <Controller
+              name="cd_cliente"
+              control={methods.control}
+              render={({ field }) => (
+                <CustomTextInput
+                  field={field}
+                  label=""
+                  type="hidden"
+                />
+              )}
+            />
             <button type="submit">
               <FontAwesomeIcon icon={faUser} />
               <span>Acessar</span>
             </button>
-            <button onClick={navigateToForgotPass}>Esqueci minha senha</button>
+            <button type="button" onClick={navigateToForgotPass}>Esqueci minha senha</button>
           </form>
         </FormProvider>
-      </div>
+      </div >
 
 
 
@@ -70,4 +112,4 @@ const SignIn: React.FC = () => {
 
 }
 
-export default SignIn
+export default Login

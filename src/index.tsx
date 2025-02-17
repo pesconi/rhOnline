@@ -4,16 +4,15 @@ import "./importStyles"; // Import the dynamic import script
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { AuthProvider } from "./hooks/auth";
+import { SaveCliente } from "./components/utils";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <BrowserRouter>
-        {/* <BrowserRouter basename={"/rhonline"}> */}
-        <App />
-      </BrowserRouter>
-    </AuthProvider>
+    <BrowserRouter>
+      {/* <BrowserRouter basename={"/rhonline"}> */}
+      <SaveCliente />
+      <App />
+    </BrowserRouter>
   </React.StrictMode >
 );
