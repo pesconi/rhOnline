@@ -41,7 +41,7 @@ const Rendimentos: React.FC = () => {
         setLoadingLista(true);
         api.get('/lista-rendimento', {
             params: {
-                cpf: user?.nr_cpf,
+                cpf: "749.247.612-49" /* user?.nr_cpf */,
             },
         })
             .then((response) => {
@@ -61,7 +61,7 @@ const Rendimentos: React.FC = () => {
         api
             .get('/comprovante-rendimento', {
                 params: {
-                    cpf: user?.nr_cpf,
+                    cpf: "749.247.612-49" /* user?.nr_cpf */,
                     ano: anoSelected,
                 },
             })

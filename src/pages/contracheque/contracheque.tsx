@@ -21,11 +21,10 @@ const Contracheque: React.FC = () => {
         api
             .get("/lista-contracheque", {
                 params: {
-                    usuario: 1,
+                    cpf: "749.247.612-49"/* user?.id_usuario */,
                 },
             })
             .then((response) => {
-                console.log("Lista Contracheque response:", response);
                 const data: ListaContracheque[] = response.data.processamentos;
                 setAnoMesAvailable(getAnoMesAvailable(data));
                 setLoadingLista(false);
@@ -37,7 +36,7 @@ const Contracheque: React.FC = () => {
         let data: ContrachequeData = {} as ContrachequeData;
         await api.get("/contracheque", {
             params: {
-                usuario: 1,
+                cpf: "749.247.612-49"/* user?.id_usuario */,
                 processamento: id_proc,
             },
         }).then((response) => {
@@ -62,7 +61,6 @@ const Contracheque: React.FC = () => {
         return openProcessamento?.processamento.id_processamento === processamento.idProcessamento;
     }
 
-    console.log()
 
     if (loadingLista) {
         return (

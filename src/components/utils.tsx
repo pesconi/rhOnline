@@ -117,7 +117,8 @@ export const clienteMap = {
     'saofranciscodobrejao': '340',
     'melgaco': '405',
     'buritirana': '428',
-    'camdavinopolis': '441'
+    'camdavinopolis': '441',
+    'teste': '1005'
 };
 
 export const SaveCliente = () => {
