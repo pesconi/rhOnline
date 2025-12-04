@@ -1,0 +1,260 @@
+/* início TABELA */
+.tabelaComp {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid #314c5e;
+
+    tr {
+        th {
+            height: 30px;
+            background-color: #314c5e;
+            color: white;
+            font-size: 1.7em;
+            border: 1px solid #000000;
+            text-align: left;
+            text-indent: 5px;
+        }
+
+        td {
+            border: 1px solid #314c5e;
+            background-color: white;
+            font-size: 1.8em;
+            text-indent: 32px;
+            cursor: pointer;
+            height: 38px;
+            //background-image: url("/assets/images/tab.png");
+            background-repeat: no-repeat;
+            background-position: center left 8px;
+        }
+
+        &:hover {
+            td {
+                background-color: #EDEBE1;
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .trtit {
+        height: 40px;
+        font-size: 1.4em;
+    }
+
+    .thtit {
+        text-align: center;
+        text-indent: 0px;
+        border-bottom: 1px solid #ffffff;
+    }
+}
+
+/* Comprovante */
+.comprovante {
+    max-width: 770px;
+    /* A4 width in pixels at 96 DPI */
+    height: 1122px;
+    /* A4 height in pixels at 96 DPI */
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    overflow: auto;
+    position: relative;
+    background-color: white;
+    font-family: Arial, Tahoma, Sans-serif;
+
+    p {
+        display: inline;
+    }
+}
+
+/* Localização do textos de cada grupo */
+.ptit {
+    font-size: 8px;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+
+.ptxt {
+    font-size: 12px;
+    top: 12px;
+    margin-left: 15px;
+}
+
+.col2 {
+    left: 4.8cm;
+}
+
+.titl2 {
+    top: 0.72cm;
+}
+
+.txtl2 {
+    top: 1cm;
+}
+
+.ptit_linha {
+    font-size: 9px;
+    margin-left: 3px;
+
+    &1 {
+        margin-top: 6px;
+    }
+
+    &2 {
+        margin-top: 30px;
+    }
+
+    &3 {
+        margin-top: 53px;
+    }
+
+    &4 {
+        margin-top: 78px;
+    }
+
+    &5 {
+        margin-top: 100px;
+    }
+
+    &6 {
+        margin-top: 128px;
+    }
+
+    &7 {
+        margin-top: 155px;
+    }
+}
+
+.ptxt_linha {
+    font-size: 9px;
+    left: 612px;
+    text-align: right;
+    width: 65px;
+}
+
+/* Cabecalho */
+.cabecalho {
+    position: relative;
+    width: 766px;
+    height: 72px;
+    /* 1.9cm converted to pixels at 96 DPI */
+    border: 2px solid black;
+
+    .brasaobr {
+        display: inline;
+        top: 1px;
+        left: 6px;
+    }
+
+    .ministerio {
+        left: 120px;
+        top: 4px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .secretaria {
+        width: 230px;
+        font-size: 12px;
+        left: 90px;
+        top: 21px;
+        text-align: center;
+        line-height: 15px;
+    }
+
+    .comp {
+        width: 300px;
+        font-size: 12px;
+        left: 360px;
+        top: 10px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 15px;
+    }
+
+    .ano {
+        white-space: nowrap;
+        line-height: 30px;
+    }
+
+    .pipec {
+        position: absolute;
+        height: 1.8cm;
+        border: 1px solid black;
+        width: 2px;
+        left: 50%;
+    }
+}
+
+.cabecalho_aviso {
+    position: relative;
+    border: 2px solid black;
+    margin: 0 auto;
+    margin-top: 3px;
+    width: 18cm;
+    height: 0.9cm;
+    border-radius: 4px;
+
+    p {
+        margin-top: 2px;
+        margin-left: 3px;
+        font-size: 11.6px;
+        text-align: center;
+        display: block;
+    }
+}
+
+.margemtopo {
+    margin-top: 1.5px;
+}
+
+.pf {
+    font-weight: bold;
+    font-size: 11px;
+    white-space: nowrap;
+    display: inline;
+}
+
+.vr {
+    left: 590px;
+    font-weight: bold;
+    font-size: 11px;
+    position: absolute;
+    white-space: nowrap;
+    display: inline;
+}
+
+/* CELULARES */
+@media screen and (max-width: 750px) {
+    .tabelaComp {
+        width: 80%;
+
+        tr {
+            td {
+                text-indent: 5px;
+                background-image: none;
+                font-size: 1.4em;
+            }
+
+            th {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+/* PRINT */
+@media print {
+    .comprovante {
+        margin-top: 0px;
+        overflow: hidden;
+    }
+
+    @page {
+        margin-top: 1.1cm;
+    }
+}

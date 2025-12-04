@@ -25,6 +25,9 @@ const CustomTextInput: React.FC<InputProps> = ({ field, ...props }) => {
   const { control } = useFormContext();
   return (
     <div className={`custom_text_input ${props.customClassName}`}>
+      <label htmlFor={field.name} className="custom_text_input_label">
+        {props.label}
+      </label>
       <Controller
         name={field.name}
         control={control}
@@ -33,7 +36,6 @@ const CustomTextInput: React.FC<InputProps> = ({ field, ...props }) => {
             <textarea
               key={restField.name}
               id={restField.name}
-              placeholder={props.label}
               disabled={restField.disabled}
               {...restField}
               ref={props.inputRef}
@@ -43,7 +45,6 @@ const CustomTextInput: React.FC<InputProps> = ({ field, ...props }) => {
               key={restField.name}
               id={restField.name}
               type={props.type}
-              placeholder={props.label}
               pattern={props.pattern}
               title={props.title}
               inputMode={props.inputMode ?? 'text'}

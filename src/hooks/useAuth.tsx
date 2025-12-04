@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import api from '../services/api';
 
 export interface ICredentials {
-    user: string;
+    cpf: string;
     password: string;
     cd_cliente: number;
 }
@@ -16,11 +16,12 @@ export interface IUser {
     ativo_dt: string;
 }
 
-interface ILoginResponse {
+export interface ILoginResponse {
     user: IUser;
     completaCadastro: boolean;
     token: string;
     message?: string;
+    status?: number;
 
 }
 
@@ -45,19 +46,14 @@ const useAuth = () => {
     }, []);
 
     const handleSignIn = async (credentials: ICredentials) => {
-        try {
-            const response = await api.post<ILoginResponse>('/login', credentials);
-            const data = response.data;
-            if (response.status === 200) {
-                localStorage.setItem('token', data.token);
-                localStorage.setItem('user', JSON.stringify(data.user));
-                setUser(data.user);
-            } else {
-                console.error(data.message);
-            }
-        } catch (error) {
-            console.error('Error during sign-in:', error);
+        const response = await api.post<ILoginResponse>('/login', credentials);
+        const data = response.data;
+        if (response.status === 200) {
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify(data.user));
         }
+        setUser(data.user);
+        return data;
     };
     const handleLogout = () => {
         localStorage.removeItem('user');

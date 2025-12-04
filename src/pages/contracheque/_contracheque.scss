@@ -1,0 +1,91 @@
+.contracheque {
+    display: flex;
+
+    &--sidePanel {
+        display: flex;
+        flex: 1;
+    }
+
+    &--content {
+        display: flex;
+        flex: 6;
+        flex-direction: column;
+        margin-right: 20px;
+
+        &__available {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            background-color: #f0eded;
+        }
+
+        &__display {
+            flex-grow: 1;
+        }
+
+        &__info {
+            gap: 5px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+
+            &--title {
+                font-size: 20px;
+                line-height: 20px;
+                font-weight: 600;
+                text-align: center;
+                color: #2622ff;
+            }
+
+            &--subtitle {
+                font-size: 14px;
+                color: #666;
+                font-style: italic;
+                text-align: center;
+            }
+        }
+
+        button {
+            margin: 10px 0;
+            border: none;
+            background-color: #6ec1e7;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #5aaac7;
+            }
+
+            &.active {
+                background-color: #4a90e2;
+            }
+
+
+        }
+
+        .btnPrint {
+            display: flex;
+            padding: 0;
+            background: none;
+            background-color: transparent;
+            border: none;
+            justify-content: center;
+            margin: 0 0 0 660px;
+
+
+
+            &:hover {
+                background-color: transparent;
+            }
+
+            img {
+                display: block;
+                width: auto;
+                height: auto;
+            }
+        }
+
+    }
+}

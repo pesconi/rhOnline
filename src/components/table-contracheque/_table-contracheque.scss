@@ -1,0 +1,669 @@
+.contracheque__table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.exp {
+    float: right;
+    margin-top: 10px;
+}
+
+.cContainer {
+    max-width: 699px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    overflow: auto;
+    position: relative;
+    background-color: #c0c0c0;
+    font-family: Arial, Tahoma, Sans-serif;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.cHeader {
+    width: 663px;
+    position: relative;
+    height: 140px;
+    background-color: white;
+}
+
+.cHeader img {
+    width: 45px;
+    height: 54px;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+}
+
+.cHeader p {
+    position: absolute;
+}
+
+.cEstado {
+    font-size: 10pt;
+    left: 36px;
+    top: 3px;
+}
+
+.cOrgao {
+    font-size: 9pt;
+    left: 36px;
+    top: 19px;
+    font-weight: bold;
+}
+
+.cEnd1 {
+    font-size: 7pt;
+    left: 36px;
+    top: 33px;
+}
+
+.cEnd2 {
+    font-size: 7pt;
+    left: 36px;
+    top: 44px;
+}
+
+.cDireita {
+    position: absolute;
+    width: 363px;
+    left: 296px;
+    height: 100%;
+}
+
+.cTit {
+    text-align: right;
+    width: 100%;
+    top: 3px;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.cData {
+    text-align: right;
+    width: 100%;
+    font-size: 8pt;
+    top: 23px;
+    font-weight: bold;
+}
+
+.cTipo {
+    text-align: right;
+    width: 100%;
+    font-size: 7pt;
+    top: 39px;
+    font-weight: bold;
+}
+
+.ccLinhaHeader {
+    position: absolute;
+    width: 662px;
+    height: 1px;
+    border-bottom: 1px solid black;
+    top: 57px;
+}
+
+.cLabel {
+    font-size: 7pt;
+    color: #444444;
+}
+
+.cCampo {
+    font-size: 7pt;
+    color: #000000;
+}
+
+.clMatricula {
+    left: 3px;
+    top: 62px;
+}
+
+.ccMatricula {
+    left: 59px;
+    top: 62px;
+}
+
+.clServidor {
+    left: 125px;
+    top: 62px;
+}
+
+.ccServidor {
+    left: 164px;
+    top: 62px;
+    font-weight: bold;
+}
+
+.clPis {
+    left: 415px;
+    top: 62px;
+}
+
+.ccPis {
+    left: 467px;
+    top: 62px;
+}
+
+.clCpf {
+    left: 565px;
+    top: 62px;
+}
+
+.ccCpf {
+    left: 589px;
+    top: 62px;
+}
+
+.clCargo {
+    left: 3px;
+    top: 77px;
+}
+
+.ccCargo {
+    left: 57px;
+    top: 77px;
+}
+
+.clCbo {
+    left: 304px;
+    top: 77px;
+}
+
+.ccCbo {
+    left: 336px;
+    top: 77px;
+}
+
+.clTipo {
+    left: 373px;
+    top: 77px;
+}
+
+.ccTipo {
+    left: 439px;
+    top: 77px;
+}
+
+.clDep {
+    left: 3px;
+    top: 101px;
+}
+
+.ccDep {
+    left: 66px;
+    top: 101px;
+}
+
+.clLot {
+    left: 295px;
+    top: 101px;
+}
+
+.ccLot {
+    left: 333px;
+    top: 101px;
+}
+
+.clAdm {
+    left: 568px;
+    top: 101px;
+}
+
+.ccAdm {
+    left: 606px;
+    top: 101px;
+}
+
+.ccLinha {
+    position: absolute;
+    width: 662px;
+    height: 1px;
+    border-bottom: 1px solid black;
+    top: 113px;
+}
+
+.cBand {
+    position: absolute;
+    width: 663px;
+    height: 16px;
+    top: 117px;
+    border: 0px;
+}
+
+.cBand1 {
+    position: absolute;
+    width: 332px;
+    height: 16px;
+    top: 0px;
+    border: 1px solid black;
+}
+
+.cBand2 {
+    position: absolute;
+    width: 325px;
+    height: 16px;
+    left: 337px;
+    top: 0px;
+    border: 1px solid black;
+}
+
+.cBand .cBand1 p {
+    position: absolute;
+    top: 2px;
+}
+
+.cbDesc1 {
+    left: 2px;
+}
+
+.cbParc1 {
+    width: 22px;
+    left: 218px;
+}
+
+.cbRef1 {
+    width: 17px;
+    left: 259px;
+}
+
+.cbProv {
+    width: 45px;
+    left: 286px;
+}
+
+.cBand .cBand2 p {
+    position: absolute;
+    top: 2px;
+}
+
+.cbDesc2 {
+    width: 41px;
+    left: 2px;
+}
+
+.cbParc2 {
+    width: 22px;
+    left: 210px;
+}
+
+.cbRef2 {
+    width: 17px;
+    left: 251px;
+}
+
+.cbDesc {
+    width: 46px;
+    left: 277px;
+}
+
+.cDados {
+    width: 663px;
+    left: 0px;
+    top: -1px;
+    position: relative;
+    background-color: white;
+}
+
+.cEvento {
+    position: relative;
+    display: block;
+    width: 663px;
+    min-height: 200px;
+}
+
+.cEvento1 {
+    position: absolute;
+    width: 332px;
+    height: 100%;
+    left: 0;
+}
+
+.cEvento2 {
+    position: absolute;
+    width: 327px;
+    height: 100%;
+    left: 336px;
+}
+
+.citem1 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 11px;
+}
+
+.cEvento .cEvento1 p {
+    position: absolute;
+    top: 1px;
+}
+
+.ceDesc1 {
+    width: 209px;
+    left: 2px;
+}
+
+.ceParc1 {
+    width: 23px;
+    left: 216px;
+}
+
+.ceRef1 {
+    width: 30px;
+    left: 245px;
+    text-align: right;
+}
+
+.ceProv {
+    width: 44px;
+    left: 282px;
+    text-align: right;
+}
+
+.citem2 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 11px;
+}
+
+.cEvento .cEvento2 p {
+    position: absolute;
+    top: 1px;
+}
+
+.ceDesc2 {
+    width: 204px;
+    left: 2px;
+}
+
+.ceParc2 {
+    width: 23px;
+    left: 210px;
+}
+
+.ceRef2 {
+    width: 30px;
+    left: 240px;
+    text-align: right;
+}
+
+.ceDesc {
+    width: 47px;
+    left: 276px;
+    text-align: right;
+}
+
+.cTotal {
+    display: block;
+    position: relative;
+    width: 663px;
+    height: 16px;
+}
+
+.cTotal1 {
+    position: absolute;
+    width: 332px;
+    height: 16px;
+    top: 0px;
+    border: 1px solid black;
+    border-bottom: 0px;
+}
+
+.cTotal2 {
+    position: absolute;
+    width: 325px;
+    height: 16px;
+    left: 337px;
+    top: 0px;
+    border: 1px solid black;
+    border-bottom: 0px;
+}
+
+.cTotal .cTotal1 p {
+    position: absolute;
+    top: 3px;
+}
+
+.ctDesc1 {
+    left: 3px;
+}
+
+.ctProv {
+    left: 263px;
+    width: 65px;
+    text-align: right;
+}
+
+.cTotal .cTotal2 p {
+    position: absolute;
+    top: 3px;
+}
+
+.ctDesc2 {
+    left: 3px;
+}
+
+.ctDesc {
+    left: 256px;
+    width: 65px;
+    text-align: right;
+}
+
+.cMsg {
+    display: block;
+    position: relative;
+    width: 663px;
+    height: 42px;
+}
+
+.cMsg1 {
+    position: absolute;
+    width: 455px;
+    height: 100%;
+    top: 0px;
+    border: 1px solid black;
+    border-right: 0px;
+}
+
+.cMsg2 {
+    position: absolute;
+    left: 455px;
+    width: 207px;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.cmMsg {
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    font-size: 6pt;
+}
+
+.cmTextoMsg {
+    position: absolute;
+    top: 7px;
+    left: 2px;
+    width: 453px;
+    height: 35px;
+    word-wrap: break-word;
+}
+
+.cmLiq {
+    position: absolute;
+    font-weight: bold;
+    top: 16px;
+    left: 5px;
+}
+
+.cmValorLiq {
+    position: absolute;
+    font-weight: bold;
+    font-size: 10pt;
+    left: 104px;
+    top: 11px;
+    width: 100px;
+    text-align: right;
+}
+
+.cRod {
+    display: block;
+    position: relative;
+    width: 662px;
+    height: 33px;
+    border: 1px solid black;
+    border-top: 0px;
+    padding-top: 2px;
+}
+
+.cRod div {
+    position: absolute;
+    border-right: 1px solid black;
+    height: 100%;
+}
+
+.cRod1 {
+    width: 68px;
+    left: 0px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.cRod2 {
+    width: 45px;
+    left: 67px;
+    padding-top: 3px;
+    padding-left: 0px;
+    text-align: center;
+}
+
+.cRod3 {
+    left: 111px;
+    width: 52px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.cRod4 {
+    left: 162px;
+    width: 55px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.cRod5 {
+    left: 216px;
+    width: 104px;
+}
+
+.cRod6 {
+    left: 319px;
+    width: 50px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.crl1 {
+    position: absolute;
+    top: 4px;
+    width: 50px;
+    left: 6px;
+    font-size: 6pt;
+}
+
+.crl2 {
+    position: absolute;
+    top: 4px;
+    width: 50px;
+    left: 58px;
+    font-size: 6pt;
+}
+
+.crc1 {
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    text-align: right;
+}
+
+.crc2 {
+    position: absolute;
+    top: 17px;
+    left: 63px;
+    text-align: right;
+}
+
+
+.crl {
+    position: absolute;
+    font-size: 6pt;
+}
+
+.crl3 {
+    top: 4px;
+    left: 390px;
+}
+
+.crl4 {
+    top: 18px;
+    left: 390px;
+}
+
+.crl5 {
+    top: 18px;
+    left: 498px;
+}
+
+.crc3 {
+    position: absolute;
+    top: 3px;
+    left: 416px;
+}
+
+.crc4 {
+    position: absolute;
+    top: 17px;
+    left: 421px;
+}
+
+.crc5 {
+    position: absolute;
+    top: 17px;
+    left: 562px;
+}
+
+.fenix {
+    background-color: white;
+    width: 699px;
+}
+
+.ic {
+    border: solid;
+    border-width: 1px;
+    border-color: #000000;
+    background-color: #ffffff;
+    max-width: 699px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.c2 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+    position: absolute;
+    top: 81%;
+    width: 100px;
+    font-size: 8pt;
+    left: 630px;
+}
+
+.c2 p {
+    padding: 2px;
+}

@@ -1,21 +1,29 @@
 .custom_text_input {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .custom_text_input_label {
+        font-size: 0.85rem;
+        font-weight: 300;
+        margin-bottom: 5px;
+        color: #495057;
+
+    }
 
     input {
-        width: 100%;
-        display: block;
+        display: flex;
         padding: .375rem .1rem .375rem .75rem;
         font-size: 1rem;
         line-height: 1.5;
         color: #495057;
-        border: 1px solid #ced4da;
-        border-radius: .25rem;
+        border: none;
+        border-radius: 8px;
         transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-        margin: 20px 0;
     }
 
     textarea {
-        width: 100%;
-        display: block;
+        display: flex;
         padding: .375rem .1rem .375rem .75rem;
         font-size: 1rem;
         line-height: 1.5;
@@ -25,6 +33,10 @@
         transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
         margin: 20px 0;
         height: 70px;
+    }
+
+    &__hidden {
+        display: none;
     }
 
     @media (max-width: 992px) {

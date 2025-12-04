@@ -1,6 +1,7 @@
 import { jwtDecode } from "jwt-decode";
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'
+import api from "../services/api";
 
 export const isTokenExpired = (token: string) => {
     if (!token) {
@@ -112,7 +113,7 @@ export function renderDate(checkTimeAndDate: any) {
 }
 
 export const clienteMap = {
-    'fantasia': '100000',
+    'fantasia': '1090',
     'saofranciscodobrejao': '340',
     'melgaco': '405',
     'buritirana': '428',
@@ -124,10 +125,24 @@ export const SaveCliente = () => {
 
     useEffect(() => {
         const path = location.pathname.replace('/', '') as keyof typeof clienteMap;
+
         const clienteId = clienteMap[path];
 
         if (clienteId) {
-            localStorage.setItem('cd_cliente', clienteId);
+            api
+                .get("/cliente", {
+                    params: {
+                        cliente: clienteId,
+                    },
+                })
+                .then((response) => {
+                    const cliente = response.data;
+                    console.log(cliente, "cliente");
+                    if (cliente && cliente.dvAtivo && cliente.ContraChequeLiberado) {
+                        localStorage.setItem('cliente', response.data.Cliente);
+                        localStorage.setItem('cd_cliente', clienteId);
+                    }
+                });
         }
 
     }, [location]);
